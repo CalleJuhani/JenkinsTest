@@ -1,26 +1,24 @@
 package fi.jamk.testi;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 
-public class HenkiloTest {
+public class HenkiloTest extends TestCase {
 
-	Henkilo tyyppi;
-	@Before
-	public void setUp() {
-		tyyppi = new Henkilo("Mikko Moisio", "151085-1436", 200.0, false);
+	public HenkiloTest(String testname) {
+		super(testname);
 	}
 
-	@After
-	public void tearDown() {}
-	    
-	@Test
-	public void palautaSotuShouldReturnCorrectSotu() {
-		assertEquals("151085-1436", tyyppi.palautaSotu());
+	public static Test suite()
+    {
+        return new TestSuite( HenkiloTest.class );
+    }
+	
+	public void testHenkilo() {
+		Henkilo tyyppi = new Henkilo("Mikko Moisio", "151085-1436", 200.0, false);
+		assertTrue("151085-1436" == tyyppi.palautaSotu());
 	}
 
 }

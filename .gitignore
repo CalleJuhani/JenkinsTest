@@ -12,6 +12,8 @@ local.properties
 .settings/
 .loadpath
 
+# Maven shit
+testiappi/target/*
 # Eclipse Core
 .project
 
