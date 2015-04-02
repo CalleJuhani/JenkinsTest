@@ -51,6 +51,10 @@ public class Henkilo implements Serializable {
         return kiinnostaa;
     }
     
+	public double kuiskaaLaina() {
+		return this.opintolaina;
+	}
+	
     /**
      * Palauttaa opiskelijan merkkijonona
      */
